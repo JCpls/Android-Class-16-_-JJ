@@ -1,0 +1,68 @@
+(1). What is Inheritance? Try to explain in Mandarin.
+---> 我所認知的Inheritance，如其字義，是能夠承接先前設定特性的功能。實務上，就是可以大範圍的設定共同項目，以便後面的物件產出之便。在第一週學習使用的class，就很大的彰顯inheritance的特性。譬如說想大範圍的比較{車子}的年份顏色里程數，可以先行設定，讓後面產出的個別{車子}項目，承接套用設定，能更快速有效的比較項目。
+
+
+(2). How to split a string in Android? Explain your understanding, and even better to attach some sample code.
+---> The split() method breaks up a string at the specified separator and returns a list of strings.
+Example.a:
+text = "Kotlin is a fun programming language"
+# split the text from space
+print(text.split(' '))
+# Output: ['Kotlin', 'is', 'a', 'fun', 'programming', 'language']
+
+To be more insteresting, we shall split the string Kotlin TutorialsepTutorial KartsepExamples with the Delimiter "sep".
+Example.b:
+fun main(args: Array<String>) {
+ 
+    var str = "Kotlin TutorialsepTutorial KartsepExamples"
+    var delimiter = "sep"
+ 
+    val parts = str.split(delimiter)
+ 
+    print(parts)
+}
+# Output: [Kotlin Tutorial, Tutorial Kart, Examples]
+
+
+(3). What kind of key-value pair collection do we use in Android? Attach a sample code that uses for-loop to print each key-value pair.
+---> In Kotlin, we use Map to contains entries, which shows key-value pairs. 
+
+Formula:
+val/var mapName = mapOf(key1 to val1, key2 to val2, key3 to val3)
+println(mapName) #output: {String=Cello, Brass=Saxophone, Woodwinds=Flute}
+
+Example:
+fun main(args : Array<String>) {
+    val items = HashMap<String, String>()
+    items["1"] = "USA"
+    items["2"] = "Japan"
+    items["3"] = "India"
+
+   for ((k, v) in items) {
+        println("$k = $v")
+
+
+(4). What’s the difference between ArrayList and LinkedList? Try to explain in Mandarin.
+---> 一、區別
+a. ArrayList是基於動態陣列的資料結構，LinkedList是基於雙向連結串列的資料結構（有next和previous）
+b. ArrayList有get（）和set（）方法，隨機訪問比較快（O（1）），而LinkedLsit的訪問需要從頭開始移動指標（O（n））。
+c. 對新增和刪除操作add（）和remove操作，LinkedList更加快捷，因為ArrayList需要移動資料。
+
+當我們需要頻繁的取得List內的資料時，使用ArrayList的效率較好，因為它的資料結構是array，array採用隨機存取(random access)的方式，也就是直接透過索引(Index)，取得值。 而LinkedList要取得值必須從開始的節點一路搜尋到要需要的值的位址，需要花費大量的時間。(ArrayList is better for storing and accessing data.)
+ 
+當我們需要頻繁的新增資料與刪除資料時，使用LinkedList較好。因為使用LinkedList新增/刪除資料時，只要改動被新增/刪除的那筆資料前面一個節點所指向的位址及可。但若使用ArrayList，要新增或刪除array的資料，新增/刪除結束後，需要重新搬動剛才被新增/刪除之後的所有節點，並且重新給定之後所有節點的索引值，因此效率會較差。
+(LinkedList is better for manipulating data.)
+
+
+(5). What are Value Type variables? List out the Value Type variables you know.
+---> A value Type in computer programming is a coded object that involves memory allocation directly where it is created. Value types are commonly contrasted to reference types that instead act as pointers to a value that is stored elsewhere.
+
+Value Type in common usage for example: struct、int、char、double .etc
+
+
+(6). What’s the maximum value of Int? If you want to represent integers larger than the limit, what should you do instead of using int variables?
+---> In computing. The number 2,147,483,647. is the maximum positive value for a 32-bit signed binary integer(Int) in computing.
+To represent larger-than-limit integers, we can thus use Long variable, whose maximum value comes to 9,223,372,036,854,775,807.
+
+
+

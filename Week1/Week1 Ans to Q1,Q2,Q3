@@ -1,0 +1,23 @@
+Q1
+a. val id = 9527  --> correct 
+b. var number: Int = 5.6  --> incorrect <The floating-point literal does not conform to the expected type Int>
+c. var title = "Hello Kotlin!"  --> correct 
+d. val content : String = null  --> incorrect <Null can not be a value of a non-null type String> --> to correct be like: val content : String? = null
+e. val number : Double? = 556.6  --> correct 
+f. var list: List<String>? = listOf(null, null)  --> incorrect <Type mismatch: inferred type is String? but String was expected>
+g. var list: List<String?>? = listOf("Wayne", "Chen")  --> correct 
+h. list.size  --> incorrect <Only safe (?.) or non-null asserted (!!.) calls are allowed on a nullable receiver of type List<String?>?> 
+i. list?.size  --> correct 
+
+Q2 
+What will the code print?  --> c. "Your grace."
+Modified == message.length is referring to the total number of characters(including space and colon) in message, which comes to 39. And when the number falls in 1 to 39, the output will be "Your grace."
+
+Q3
+Which answer is the correct way to initialize the array to output.
+Modified == 
+--> d.val array = Array(6) { 1000.0.pow(it) }
+
+--> Array(6) should be an array with 6 values, and (it) in an array can equal to index 0..5
+Also, num.pow(0) = 1; num.pow(1) = num; and then followed by num to the power of (2),(3),(4),(5) 
+which makes Array(6){1000.0.pow(it)} look like [1, 1000, 1000000, 1000000000, 1000000000000, 1000000000000000] 
