@@ -63,6 +63,7 @@
         <action
             android:id="@+id/action_gameWonFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/gameOverFragment"
@@ -87,6 +88,6 @@
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.android.navigation.ProfileFragment"
-        android:label="@string/profile_trivia_title"
+        android:label="Profile"
         tools:layout="@layout/fragment_profile" />
 </navigation>

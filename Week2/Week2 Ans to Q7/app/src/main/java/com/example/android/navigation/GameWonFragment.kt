@@ -37,21 +37,30 @@ import android.content.pm.PackageManager
 
 
 class GameWonFragment : Fragment() {
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         // Inflate the layout for this fragment
         val binding: FragmentGameWonBinding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_game_won, container, false)
+            inflater, R.layout.fragment_game_won, container, false
+        )
         binding.nextMatchButton.setOnClickListener { view: View ->
             view.findNavController().navigate(
-                GameWonFragmentDirections.actionGameWonFragmentToGameFragment())
-
+                GameWonFragmentDirections.actionGameWonFragmentToGameFragment()
+            )
+        }
+        binding.gotoProfileButton.setOnClickListener { view: View ->
+            view.findNavController().navigate(
+                GameWonFragmentDirections.actionGameWonFragmentToProfileFragment()
+            )
         }
         setHasOptionsMenu(true)
         return binding.root
     }
 
-    private fun getShareIntent() : Intent {
+
+    private fun getShareIntent(): Intent {
         val args = GameWonFragmentArgs.fromBundle(requireArguments())
         return ShareCompat.IntentBuilder.from(activity!!)
             .setText(getString(R.string.share_success_text, args.numCorrect, args.numQuestions))
@@ -79,25 +88,5 @@ class GameWonFragment : Fragment() {
         }
         return super.onOptionsItemSelected(item)
     }
+
 }
-
-class GameWonFragment02 : Fragment() {
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        val binding: FragmentGameWonBinding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_game_won, container, false
-        )
-        binding.gotoProfileButton.setOnClickListener { view: View ->
-            view.findNavController().navigate(
-                GameWonFragmentDirections.actionGameWonFragmentToProfileFragment()
-            )
-
-        }
-        setHasOptionsMenu(true)
-        return binding.root
-    }
-}
-
