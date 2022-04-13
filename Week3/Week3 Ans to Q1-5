@@ -1,0 +1,62 @@
+1. What is Encapsulation? Try to list out the benefits of Encapsulation.
+Ans>>>
+Encapsulation is union data and logic to one unit and hide data from external access. As a result, we have reducing couplings between software components and have more readable and stable code.
+
+The main benefits of using encapsulation is the security of the data. Benefits of encapsulation include:
+a. Encapsulation protects an object from unwanted access by clients.
+b. Encapsulation allows access to a level without revealing the complex details below that level.
+c. It reduces human errors.
+d. Simplifies the maintenance of the application.
+e. Makes the application easier to understand.
+
+
+2. Try to explain what enum is and why we use them.
+Ans>>>
+In short, Kotlin enums are a way to describe a set of predefined constants in your code. 
+
+When you’re modeling your app’s data, some concepts will have a limited set of possibilities. An example is an app that supports light and dark modes. In a case like this, you define an enum with two predefined cases: LIGHT and DARK. No other cases are possible — those are the only possible modes.
+
+When you have a well-defined realm of possibilities, enums are a great candidate. By using them, your code has compile-time checks that prevent the developer from using an undefined case. You can’t reference an app mode called COLORFUL when the only options are LIGHT and DARK. That same characteristic makes enums unsuitable for variable or dynamic sets of data. You can’t define enum cases at runtime, and there’s no reason to: It would defeat their purpose of holding a predefined set of values. It’s also better for performance, as you won’t have to compare String values, for instance.
+
+
+3. How to use enum in Kotlin? Attach a sample code that uses enum in Kotlin.
+Ans>>>
+An Enum is a class that represents a group of constants. You can always use enums when a variable can only accept value out of a small set of known values. Examples would be things like type constants (directions: NORTH, SOUTH, EAST, WEST).
+
+The enum constants are separated by commas and each of them is an object.
+
+Ex: enum class OlympicMedal{
+	GOLD, SILVER, BRONZE
+}
+
+Ex2: enum class Color(val rgb: Int){
+	RED(0xFF0000)
+	GREEN(0x00OOFF00)
+	BLUE(0x0000FF)
+}
+
+
+4. What are the differences between LinearLayout and RelativeLayout? Try to explain in detail.
+Ans>>>
+Linear Layout :
+LinearLayout is a view group responsible for keeping the view horizontal or vertical This is a layout that allows groups to be arranged horizontally or vertically. Linear Layout is the simplest layout, it can arrange elements one after another horizontally or vertically.
+
+Relative Layout :
+Relative Layout is a view that display nested views in relative position. The position of each view can be relative to the sibling view (for example, on the left or below another view) or relative to the position of the main area of ​​the Relative Layout (example-> bottom, left, or center). Relative layout allows us to position our components/views based on the position of relative or sibling components.
+
+
+5. Try to explain the benefits of ConstraintLayout. Why should you use it?
+Ans>>>
+ConstraintLayout simplifies the creation of large and complex layouts. The main advantage of ConstraintLayout is that it helps to create a flat view hierarchy. A flat view hierarchy is very beneficial in the case of performance analysis.
+
+Constraint Layout in Android also makes it possible to build most of your UI using only the visual editor in Android Studio.
+
+So these constraints can be built entirely by drag-and-drop instead of XML or Java code with the help of great Layout Editor. The best part is that you do not have to define any orientation or relation of view components and just need to connect one horizontal and one vertical constraint.
+
+Constraint Layout comes with some powerful tools with the help of which you can define complex layouts without having deep nesting. So it flattens the view hierarchy and gives better performance.
+
+In summary, the reason why should use ConstraintLayout, is because it brings better performance and save time from inserting unnecessary definition. 
+
+
+
+
