@@ -49,7 +49,11 @@ class SleepQualityViewModel(
      */
     private val _navigateToSleepTracker = MutableLiveData<Boolean?>()
 
+
+    // my code
+    val sleepInfo = MutableLiveData<String>()
     /**
+     *
      * When true immediately navigate back to the [SleepTrackerFragment]
      */
     val navigateToSleepTracker: LiveData<Boolean?>
@@ -72,9 +76,12 @@ class SleepQualityViewModel(
      * Then navigates back to the SleepTrackerFragment.
      */
     fun onSetSleepQuality(quality: Int) {
+
         viewModelScope.launch {
                 val tonight = database.get(sleepNightKey) ?: return@launch
                 tonight.sleepQuality = quality
+            //my code double binding
+                tonight.sleepInfo = sleepInfo.value.toString()
                 database.update(tonight)
 
             // Setting this state variable to true will alert the observer and trigger navigation.
