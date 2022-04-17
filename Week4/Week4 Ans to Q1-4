@@ -1,0 +1,80 @@
+1. What is Polymorphism? Try to explain in Mandarin.
+Ans>>>
+身為物件導向語言的Kotlin，在物件的概念上，有三個重要能力：
+繼承(Inheritance)、封裝（Encapsulation）和多型(Polymorphism)。
+針對多型的部分，多型能讓共通的介面存在於不同結構的物件。比如按下鍵盤上同樣的按鍵，會因輸入法不同，輸出不同的文字。
+多型的作用是消除類型之間的耦合關係，我們知道繼承允許將對象視爲它本身的類型或其基類型來加以處理，這種能力極爲重要，
+因爲它允許將多種類型（從同一基類導出的）視爲同一類型來處理，那麼同一份代碼不必修改就可以運行在不同類型上。
+藉由多型的功能，我們持有從基類繼承而來的相同接口，以及使用該接口的不同形式，透過多型可以達到更多靈活的衍生使用，
+包括不同版本的動態綁定方法。
+
+
+2. Here are the 7 important lifecycle methods of an Activity:
+i. onCreate()
+ii. onStart()
+iii. onResume()
+iv. onPause()
+v. onStop()
+vi. onDestroy()
+Try to explain when they are called during the lifecycle of Activity.
+
+Ans>>>
+onCreate is called when we first time open up the activity. 
+And it only gets called once when this activity is first launched.
+
+onStart is called when the Activity becomes visible.
+onStop is called when the Activity goes off screen.
+
+onResume and onPause have to do with a concept called focus. 
+Having focus is when you can actually interact with the activity.
+
+onResume is called when the activity has focus,
+onPause is called when the Activity loses focus.
+and onResume will once be called when activity gains focus again.
+
+So after onDestroy is called for the activity, 
+the system will go ahead and start cleaning up the memory. 
+The destruction of the activity happens if we navigate out or manually call the activity finish.
+
+
+3. What is the Android Jetpack?
+Ans>>>
+Android Jetpack is a collection of Android software components which helps us in building great Android apps. 
+Android Jetpack Components are a collection of libraries ,tools, and architectural guidance that that help in 
+developing robust android applications. 
+
+Jetpack comprises the androidx.* package libraries, unbundled from the platform APIs. 
+This means that it offers backward compatibility. 
+The software components have been divided into 4 categories:
+
+a. Foundation Components
+b. Architecture Components
+c. Behavior Components
+d. UI Components
+
+They all provides common infrastructure code so you can focus on what makes your app unique.
+
+
+4. What is Coroutines? Why do we use it? Try to explain in Mandarin.
+Ans>>>
+Coroutines(協程): 通過允許suspend和resume，來更理想的完成同時間執行多項任務，而不搶占彼此或是主線程。
+協程主要是為了非同步(異步)、非阻塞的代碼，這個概念並不是Kotlin特有的，在Python等多個語言中都有類似概念。
+
+在Kotlin中用協程來做異步和非阻塞任務，主要優點是代碼可讀性好，不用回調函數。
+
+另外很重要的觀念釐清，就是：協程和線程的關係(Coroutines & Thread)
+coroutine(協程)可以理解為輕量級的線程。多個協程可以同時運作、互相等待、互相通信，協程和線程的最大區別就是協程非常輕量，
+我們可以創建成千上萬個協程而不必考慮性能。
+
+協程運作在線程上的時候，可以被suspended，等同於可以被暫停、進一步等待指令，或是從線程移除。
+此時，線程就可以自由做其他事情，當計算準備好繼續進行時，再進一步傳送指令給其他線程與同時存在的協程。
+
+小結：
+Coroutines這種非同步的特性，很適合應用在：網路呼叫、檔案存取、壓縮解壓縮、影像運算處理上，
+可以做到不阻斷主要執行緒但是程式依然能夠執行的特性，例如要平行的做五個coroutine就直接在迴圈中呼叫launch即可。
+五個launch的coroutine分別依照自己的時間去印出結果，而不會互相阻擋彼此的呼叫。
+
+
+
+
+

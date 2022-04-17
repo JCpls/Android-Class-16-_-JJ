@@ -50,8 +50,7 @@ class SleepQualityViewModel(
     private val _navigateToSleepTracker = MutableLiveData<Boolean?>()
 
 
-    // my code
-    val sleepInfo = MutableLiveData<String>()
+
     /**
      *
      * When true immediately navigate back to the [SleepTrackerFragment]
@@ -59,6 +58,8 @@ class SleepQualityViewModel(
     val navigateToSleepTracker: LiveData<Boolean?>
         get() = _navigateToSleepTracker
 
+    // my code
+    val sleepInfo = MutableLiveData<String>()
     /**
      *
      */
