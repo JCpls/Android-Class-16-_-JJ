@@ -28,8 +28,9 @@
     <ImageView
         android:id="@+id/mars_image"
         android:layout_width="match_parent"
-        android:layout_height="170dp"
+        android:layout_height="match_parent"
         android:scaleType="centerCrop"
+        android:text="@string/display_type"
         android:adjustViewBounds="true"
         android:padding="2dp"
         app:imageUrl="@{property.imgSrcUrl}"
